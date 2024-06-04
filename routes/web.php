@@ -29,7 +29,7 @@ Route::middleware(['auth','verified'])
         return view('admin.dashboard');
     })->name('dashboard');
 
-    Route::resource('project', ProjectController::class);
+    Route::resource('projects', ProjectController::class);
 });
 
 Route::middleware('auth')->group(function () {
