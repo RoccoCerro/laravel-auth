@@ -25,6 +25,17 @@
         </td>
         <td>{{$project->slug}}</td>
         <td>{{$project->content}}</td>
+        <td><a href="{{ route('admin.projects.edit', $project) }}">modifica</a></td>
+        <td>
+          <form action="{{ route('admin.projects.destroy',$project) }}" method="POST">
+                  
+          @csrf
+          @method('DELETE')
+
+          <button class="btn btn-link link-danger">Elimina</button>
+        
+          </form>
+        </td>
       </tr>
       @endforeach
     </tbody>
