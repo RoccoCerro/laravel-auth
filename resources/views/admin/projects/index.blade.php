@@ -18,7 +18,11 @@
     <tbody>
       @foreach ($projects as $project)
       <tr>
-        <td>{{$project->title}}</td>
+        <td>
+          <a href="{{ route('admin.projects.show', $project) }}">
+            {{ $project->title }}
+          </a>
+        </td>
         <td>{{$project->slug}}</td>
         <td>{{$project->content}}</td>
       </tr>
